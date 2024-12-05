@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "code": "01418112",
+      "courseName": "Fundamental Programming Concepts",
+      "grade": "A",
+      "credit": 3
+    },
+    {
+      "id": 2,
+      "courseName": "Statistical Programming",
+      "code": "01418131",
+      "grade": "A",
+      "credit": 3
+    },
+    {
+      "id": 3,
+      "code": "01418113",
+      "courseName": "Computer Programming",
+      "grade": "A",
+      "credit": 3
+    },
+    {
+      "id": 4,
+      "code": "01417322",
+      "courseName": "Basic Linear Algebra",
+      "grade": "A",
+      "credit": 3
+    },
+    {
+      "id": 5,
+      "courseName": "Computer Architecture",
+      "code": "01418233",
+      "grade": "A",
+      "credit": 3
+    },
+    {
+      "id": 6,
+      "code": "01418211",
+      "courseName": "Software Construction",
+      "grade": "A",
+      "credit": 3
+    }
+  ]

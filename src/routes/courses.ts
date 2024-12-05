@@ -22,7 +22,7 @@ courseRoutes.get(
   "/courses/:id",
   async ({ params: { id } }: Request<Params>, res: Response): Promise<void> => {
     try {
-      const sql: string = `SELECT * FROM courses WHERE id = '${id}'`;
+      const sql: string = `SELECT * FROM courses WHERE id = ${id}`;
       const [courses] = await connection.query<Courses>(sql);
       const course: CourseModel | object =
         courses[0] === undefined ? {} : courses[0];
@@ -38,12 +38,12 @@ courseRoutes.post(
   "/courses/create",
   async (
     {
-      body: { id, courseName, code, grade, credit },
+      body: { courseName, code, grade, credit },
     }: Request<any, CourseModel, CourseModel>,
     res: Response
   ): Promise<void> => {
     try {
-      const sql = `INSERT INTO courses VALUES('${id}', '${courseName}', '${code}', '${grade}', ${credit})`;
+      const sql = `INSERT INTO courses VALUES(DEFAULT(id), '${courseName}', '${code}', '${grade}', ${credit})`;
       await connection.query<Courses>(sql);
 
       res.status(201).json({ success: "เพิ่มรายวิชาสำเร็จ" });
@@ -63,7 +63,7 @@ courseRoutes.put(
     res: Response
   ): Promise<void> => {
     try {
-      const sql: string = `UPDATE courses SET courseName = '${courseName}', code = '${code}', grade = '${grade}', credit = ${credit} WHERE id = '${params.id}'`;
+      const sql: string = `UPDATE courses SET courseName = '${courseName}', code = '${code}', grade = '${grade}', credit = ${credit} WHERE id = ${params.id}`;
       await connection.query<Courses>(sql);
 
       res.status(200).json({ success: "อัปเดตรายวิชาสำเร็จ" });
@@ -77,7 +77,7 @@ courseRoutes.delete(
   "/courses/delete/:id",
   async ({ params: { id } }: Request<Params>, res: Response): Promise<void> => {
     try {
-      const sql: string = `DELETE FROM courses WHERE id = '${id}'`;
+      const sql: string = `DELETE FROM courses WHERE id = ${id}`;
       await connection.query<Courses>(sql);
 
       res.status(200).json({ success: "ลบรายวิชาสำเร็จ" });
