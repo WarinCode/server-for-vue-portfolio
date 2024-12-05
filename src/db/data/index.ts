@@ -19,7 +19,7 @@ export const schools: Schools = [
     schoolName: "โรงเรียนเมืองพัทยา 5",
     studyPlan: "-",
     period: "อ.1 - อ.3",
-    img: "https://scontent.fbkk22-4.fna.fbcdn.net/v/t39.30808-6/314329690_564082088856983_3436000969958001644_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeG_ySAiapo7IWGYj2-HvjRrINaLbSZ6Nt4g1ottJno23v8dt8qV3goaakajFcP7Zh7YolJL_tqRGeXa7IYCJCZP&_nc_ohc=dXxcSriec-4Q7kNvgF-nflB&_nc_zt=23&_nc_ht=scontent.fbkk22-4.fna&_nc_gid=AbG--hgSRFkh8nzNs-LtJ8P&oh=00_AYBM6oYXjeGnsUP_nGC74K0Ocw1lYw9l7srXYjk2lcePvA&oe=67512038",
+    img: "https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-6/314329690_564082088856983_3436000969958001644_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeG_ySAiapo7IWGYj2-HvjRrINaLbSZ6Nt4g1ottJno23v8dt8qV3goaakajFcP7Zh7YolJL_tqRGeXa7IYCJCZP&_nc_ohc=3J_RNAA8T2wQ7kNvgHcFK1U&_nc_zt=23&_nc_ht=scontent-bkk1-1.xx&_nc_gid=AQCGMl9D78nP_CUt6wp_uPB&oh=00_AYCfifguVwpmZ3p8mcOQ_OyRaA8izqvRYVcFxh9JZ2EmKw&oe=67577F78",
     logo: "/assets/imgs/school5.png",
     facebookLink:
       "https://web.facebook.com/pattayacity5school/?locale=th_TH&_rdc=1&_rdr",
