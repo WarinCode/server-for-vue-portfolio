@@ -3,13 +3,13 @@ import { configDotenv } from "dotenv";
 import { EnvironmentVariables } from "../types";
 
 configDotenv();
-const { DB, HOST, PORT, USER, PASSWORD } = <EnvironmentVariables>process.env;
+const { DB, HOST, DB_PORT, USERNAME, PASSWORD } = <EnvironmentVariables>process.env;
 
 const connection: Connection = await createConnection({
     database: DB,
-    user: USER,
+    user: USERNAME,
     password: PASSWORD,
-    port: parseInt(PORT),
+    port: parseInt(DB_PORT),
     host: HOST
 });
 

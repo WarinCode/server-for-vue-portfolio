@@ -1,8 +1,8 @@
 export interface EnvironmentVariables extends NodeJS.ProcessEnv{
     readonly DB: string;
     readonly HOST: string;
-    readonly PORT: string;
-    readonly USER: string;
+    readonly DB_PORT: string;
+    readonly USERNAME: string;
     readonly PASSWORD: string;
 }
 
