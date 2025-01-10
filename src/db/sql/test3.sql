@@ -1,0 +1,1 @@
+SELECT courseName, code, grade FROM courses WHERE grade = 'A' AND credit = 3;
