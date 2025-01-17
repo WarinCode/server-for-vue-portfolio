@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import SchoolModel, { Schools } from "../types/models/school";
 import { schools } from "../db/data";
 import { Params } from "../types";
+import { getNotFoundPage } from "../middlewares";
 
 const schoolRoutes: Router = Router();
 
@@ -20,8 +21,6 @@ schoolRoutes.get(
   }
 );
 
-schoolRoutes.all("/schools/*", (req: Request, res: Response): void => {
-  res.status(404).send("Page not found!");
-});
+schoolRoutes.all("/schools/*", getNotFoundPage);
 
 export default schoolRoutes;

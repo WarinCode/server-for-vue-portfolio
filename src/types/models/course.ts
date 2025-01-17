@@ -2,7 +2,7 @@ import { RowDataPacket } from "mysql2";
 
 export default interface CourseModel extends RowDataPacket {
     id: number;
-    code: string;
+    courseCode: string;
     courseName: string;
     grade: string;
     credit: number;

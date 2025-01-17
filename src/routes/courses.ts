@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import connection from "../db/connection";
 import { Params } from "../types";
 import CourseModel, { Courses } from "../types/models/course";
+import { getNotFoundPage } from "../middlewares";
 
 const courseRoutes: Router = Router();
 
@@ -38,12 +39,12 @@ courseRoutes.post(
   "/courses/create",
   async (
     {
-      body: { courseName, code, grade, credit },
+      body: { courseName, courseCode, grade, credit },
     }: Request<any, CourseModel, CourseModel>,
     res: Response
   ): Promise<void> => {
     try {
-      const sql = `INSERT INTO courses VALUES(DEFAULT(id), '${courseName}', '${code}', '${grade}', ${credit})`;
+      const sql = `INSERT INTO courses VALUES(DEFAULT(id), '${courseName}', '${courseCode}', '${grade}', ${credit})`;
       await connection.query<Courses>(sql);
 
       res.status(201).json({ success: "เพิ่มรายวิชาสำเร็จ" });
@@ -57,13 +58,13 @@ courseRoutes.put(
   "/courses/update/:id",
   async (
     {
-      params,
-      body: { id, courseName, code, grade, credit },
+      params: { id },
+      body: { courseName, courseCode, grade, credit },
     }: Request<Params, CourseModel, CourseModel>,
     res: Response
   ): Promise<void> => {
     try {
-      const sql: string = `UPDATE courses SET courseName = '${courseName}', code = '${code}', grade = '${grade}', credit = ${credit} WHERE id = ${params.id}`;
+      const sql: string = `UPDATE courses SET courseName = '${courseName}', courseCode = '${courseCode}', grade = '${grade}', credit = ${credit} WHERE id = ${id}`;
       await connection.query<Courses>(sql);
 
       res.status(200).json({ success: "อัปเดตรายวิชาสำเร็จ" });
@@ -87,8 +88,6 @@ courseRoutes.delete(
   }
 );
 
-courseRoutes.all("/courses/*", (req: Request, res: Response): void => {
-  res.status(404).send("Page not found!");
-});
+courseRoutes.all("/courses/*", getNotFoundPage);
 
 export default courseRoutes;

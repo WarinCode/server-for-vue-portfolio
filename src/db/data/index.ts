@@ -15,7 +15,7 @@ export const user: UserModel = {
 
 export const schools: Schools = [
   {
-    id: "1",
+    id: 1,
     schoolName: "โรงเรียนเมืองพัทยา 5",
     studyPlan: "-",
     period: "อ.1 - อ.3",
@@ -26,7 +26,7 @@ export const schools: Schools = [
     location: "https://maps.app.goo.gl/U6VmnKeAtdUtLZKu5",
   },
   {
-    id: "2",
+    id: 2,
     schoolName: "โรงเรียนเมืองพัทยา 9 วัดโพธิสัมพันธ์",
     studyPlan: "วิทย์คณิต",
     period: "ป.1 - ม.3",
@@ -36,7 +36,7 @@ export const schools: Schools = [
     location: "https://maps.app.goo.gl/TR1FJSARGmSYpL6v6",
   },
   {
-    id: "3",
+    id: 3,
     schoolName: "โรงเรียนโพธิสัมพันธิ์พิทยาคาร",
     studyPlan: "วิทย์คอม",
     period: "ม.4 - ม.6",

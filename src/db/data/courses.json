@@ -1,154 +1,154 @@
 [
   {
-    "id": "1",
-    "code": "01418111",
+    "id": 1,
+    "courseCode": "01418111",
     "courseName": "Introduction to Computer Science",
     "grade": "B+",
     "credit": 2
   },
   {
-    "id": "2",
-    "code": "01418141",
+    "id": 2,
+    "courseCode": "01418141",
     "courseName": "Intellectual Properties and Professional Ethics",
     "grade": "B+",
     "credit": 3
   },
   {
-    "id": "3",
-    "code": "01999021",
+    "id": 3,
+    "courseCode": "01999021",
     "courseName": "Thai Language for Communication",
     "grade": "B",
     "credit": 3
   },
   {
-    "id": "4",
-    "code": "01999111",
+    "id": 4,
+    "courseCode": "01999111",
     "courseName": "Knowledge of the Land",
     "grade": "A",
     "credit": 2
   },
   {
-    "id": "5",
-    "code": "03751112",
+    "id": 5,
+    "courseCode": "03751112",
     "courseName": "Social and Politics",
     "grade": "B",
     "credit": 3
   },
   {
-    "id": "6",
-    "code": "01355101",
+    "id": 6,
+    "courseCode": "01355101",
     "courseName": "English for Everyday Life",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "7",
-    "code": "01417111",
+    "id": 7,
+    "courseCode": "01417111",
     "courseName": "Calculus I",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "8",
-    "code": "01418112",
+    "id": 8,
+    "courseCode": "01418112",
     "courseName": "Fundamental Programming Concepts",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "9",
-    "code": "01418112",
+    "id": 9,
+    "courseCode": "01418112",
     "courseName": "Basic Linear Algebra",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "10",
-    "code": "01999041",
+    "id": 10,
+    "courseCode": "01999041",
     "courseName": "Economics for Better Living",
     "grade": "C",
     "credit": 3
   },
   {
-    "id": "11",
-    "code": "01418132",
+    "id": 11,
+    "courseCode": "01418132",
     "courseName": "Fundamentals of Computing",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "12",
-    "code": "01175163",
+    "id": 12,
+    "courseCode": "01175163",
     "courseName": "Golf for Health",
     "grade": "A",
     "credit": 1
   },
   {
-    "id": "13",
-    "code": "01418113",
+    "id": 13,
+    "courseCode": "01418113",
     "courseName": "Computer Programming",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "14",
-    "code": "01355102",
+    "id": 14,
+    "courseCode": "01355102",
     "courseName": "English for University Life",
     "grade": "B+",
     "credit": 3
   },
   {
-    "id": "15",
-    "code": "03654111",
+    "id": 15,
+    "courseCode": "03654111",
     "courseName": "Aesthetics of Sport",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "16",
-    "code": "01418131",
+    "id": 16,
+    "courseCode": "01418131",
     "courseName": "Statistical Programming",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "17",
-    "code": "01418361",
+    "id": 17,
+    "courseCode": "01418361",
     "courseName": "Introduction to Computer Vision",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "18",
-    "code": "01418211",
+    "id": 18,
+    "courseCode": "01418211",
     "courseName": "Software Construction",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "19",
-    "code": "01999012",
+    "id": 19,
+    "courseCode": "01999012",
     "courseName": "Health for Life",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "20",
-    "code": "01418231",
+    "id": 20,
+    "courseCode": "01418231",
     "courseName": "Data Structures and Algorithms",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "21",
-    "code": "01418233",
+    "id": 21,
+    "courseCode": "01418233",
     "courseName": "Computer Architecture",
     "grade": "A",
     "credit": 3
   },
   {
-    "id": "22",
-    "code": "01174231",
+    "id": 22,
+    "courseCode": "01174231",
     "courseName": "Introduction to Recreation",
     "grade": "B",
     "credit": 2

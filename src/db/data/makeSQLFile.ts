@@ -1,18 +1,17 @@
 import fs from "fs/promises"
 import CourseModel from "../../types/models/course";
 
-const json = <CourseModel[]>JSON.parse(await fs.readFile("src/db/data/courses.json", "utf-8"));
+const jsonString: string = await fs.readFile("./courses.json", { encoding: "utf-8" });
+const courses = <CourseModel[]>JSON.parse(jsonString);
 let statments: string = "";
 
-json.forEach(({
-    id,
-    courseName,
-    code,
+for (const { courseName,
+    courseCode,
     grade,
-    credit
-}: CourseModel): void => {
-    statments += `INSERT INTO courses (id, courseName, code, grade, credit) VALUES ('${id}', '${courseName}', '${code}', '${grade}', ${credit});\n`;
-})
+    credit } of courses) {
+    statments += `INSERT INTO courses (id, courseName, courseCode, grade, credit) VALUES (DEFAULT(id), '${courseName}', '${courseCode}', '${grade}', ${credit});\n`;
+}
 
-await fs.writeFile("src/db/sql/courses.sql", statments);
-console.log("เขียนไฟล์ sql สำเร็จ!")
+fs.writeFile("../sql/insert.sql", statments)
+    .then((): void => console.log("เขียนไฟล์ sql สำเร็จ!"))
+    .catch((): void => console.error("ไม่สามารถเขียนไฟล์ sql ได้"))

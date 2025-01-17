@@ -5,6 +5,7 @@ import morgan from "morgan";
 import courseRoutes from "./routes/courses";
 import schoolRoutes from "./routes/schools";
 import universityRoutes from "./routes/university";
+import { checkConnection, getNotFoundPage } from "./middlewares";
 
 const app: Express = express();
 const port: number = 3452;
@@ -16,11 +17,10 @@ app
   .get("/", (req: Request, res: Response): void => {
     res.status(200).send("Hello World");
   })
+  .use("/api/*", checkConnection)
   .use("/api", userRoutes)
   .use("/api", courseRoutes)
   .use("/api", schoolRoutes)
   .use("/api", universityRoutes)
-  .use("*", (req: Request, res: Response): void => {
-    res.status(404).send("Page not found!");
-  })
+  .use("*", getNotFoundPage)
   .listen(port, (): void => console.log(`Server is running on port ${port}`));
