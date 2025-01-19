@@ -26,5 +26,5 @@ app
   .use("/api", courseRoutes)
   .use("/api", schoolRoutes)
   .use("/api", universityRoutes)
-  .use("/api/*", getNotFoundPage)
+  .use("*", getNotFoundPage)
   .listen(port, (): void => console.log(`Server is running on port ${port}`));
