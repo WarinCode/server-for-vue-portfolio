@@ -1,12 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import jwt, { VerifyErrors, JwtPayload } from "jsonwebtoken";
-import { configDotenv } from "dotenv";
-import { EnvironmentVariables } from "../types";
 import connection from "../db/connection";
 import { Courses } from "../types/models/course";
-
-configDotenv();
-const { SECRET_KEY } = <EnvironmentVariables>process.env;
+import { getEnv } from "../utils";
 
 export const getNotFoundPage = ({ path }: Request, res: Response): void => {
     res.status(404).send(`ไม่พบ path ${path} ของหน้าเพจที่เรียกหา!`);
@@ -38,10 +34,12 @@ export const auth = ({ headers: { authorization } }: Request, res: Response, nex
         return;
     }
 
-    jwt.verify(token, SECRET_KEY, (err: VerifyErrors | null, decoded: JwtPayload | string | undefined): void => {
-        if(err instanceof jwt.JsonWebTokenError){
+    const secretKey = getEnv("SECRET_KEY");
+
+    jwt.verify(token, secretKey, (err: VerifyErrors | null, decoded: JwtPayload | string | undefined): void => {
+        if (err instanceof jwt.JsonWebTokenError) {
             res.status(403).json({ message: "ผู้ใช้งานไม่ได้รับอณุญาติให้เข้าถึงข้อมูล!" });
-            return; 
+            return;
         }
 
         next();

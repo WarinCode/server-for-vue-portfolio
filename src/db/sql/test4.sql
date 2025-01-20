@@ -1,1 +1,0 @@
-INSERT INTO users VALUES(0, 'warin', '73210000')

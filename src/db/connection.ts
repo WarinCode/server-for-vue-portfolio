@@ -1,17 +1,13 @@
-import { createConnection, Connection } from "mysql2/promise";
-import { configDotenv } from "dotenv";
-import { EnvironmentVariables } from "../types";
+import { createConnection, Connection, ConnectionOptions } from "mysql2/promise";
+import { getEnv } from "../utils";
 
-configDotenv();
-const { DB, HOST, DB_PORT, USERNAME, PASSWORD } = <EnvironmentVariables>process.env;
+const connectionOptions: ConnectionOptions = {
+    database: getEnv("DB"),
+    user: getEnv("USERNAME"),
+    password: getEnv("PASSWORD"),
+    port: parseInt(getEnv("DB_PORT")),
+    host: getEnv("HOST")
+};
 
-const connection: Connection = await createConnection({
-    database: DB,
-    user: USERNAME,
-    password: PASSWORD,
-    port: parseInt(DB_PORT),
-    host: HOST
-});
-
-
+const connection: Connection = await createConnection(connectionOptions);
 export default connection;
