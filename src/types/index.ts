@@ -1,6 +1,6 @@
 import { RowDataPacket } from "mysql2";
 
-export interface EnvironmentVariables extends NodeJS.ProcessEnv{
+export interface EnvironmentVariables extends NodeJS.ProcessEnv {
     readonly DB: string;
     readonly HOST: string;
     readonly DB_PORT: string;
@@ -11,6 +11,12 @@ export interface EnvironmentVariables extends NodeJS.ProcessEnv{
 
 export interface Params {
     id: number;
+}
+
+export interface GPAParams {
+    year: string;
+    studentYear: string;
+    semester: "first" | "second" | "summer";
 }
 
 export interface UserLogin extends RowDataPacket {

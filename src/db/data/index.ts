@@ -1,6 +1,7 @@
 import UserModel from "../../types/models/user";
 import UniversityModel from "../../types/models/university";
 import { Schools } from "../../types/models/school";
+import { GPAs } from "../../types/models/gpa";
 
 export const user: UserModel = {
   fullname: "วรินทร์ สายปัญญา",
@@ -57,3 +58,30 @@ export const university: UniversityModel = {
   facebookLink: "https://web.facebook.com/KasetsartUniversity",
   location: "https://maps.app.goo.gl/rtVuC3BGS47hGkJ2A",
 };
+
+export const gpas: GPAs = [
+  {
+    year: 2566,
+    studentYear: 1,
+    semester: "first",
+    gpa: 3.61,
+    gpax: 3.61,
+    credit: 22
+  },
+  {
+    year: 2566,
+    studentYear: 1,
+    semester: "second",
+    gpa: 3.66,
+    gpax: 3.64,
+    credit: 22
+  },
+  {
+    year: 2567,
+    studentYear: 2,
+    semester: "first",
+    gpa: 3.88,
+    gpax: 3.70,
+    credit: 17
+  }
+]

@@ -6,11 +6,11 @@ import courseRoutes from "./routes/courses";
 import schoolRoutes from "./routes/schools";
 import universityRoutes from "./routes/university";
 import loginRoute from "./routes/login";
+import gpaRoutes from "./routes/gpa";
 import { checkConnection, getNotFoundPage, auth } from "./middlewares";
-import { corsOptions } from "./configs";
+import { corsOptions, port } from "./configs";
 
 const app: Express = express();
-const port: number = 3452;
 
 app
   .use(json())
@@ -28,5 +28,6 @@ app
   .use("/api", courseRoutes)
   .use("/api", schoolRoutes)
   .use("/api", universityRoutes)
+  .use("/api", gpaRoutes)
   .use("*", getNotFoundPage)
   .listen(port, (): void => console.log(`Server is running on port ${port}`));
