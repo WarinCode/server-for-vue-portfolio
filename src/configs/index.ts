@@ -1,10 +1,9 @@
 import { CorsOptions } from "cors";
 
-const isDevmode: boolean = process.env?.NODE_ENV?.trim() === "development";
 export const port: number = 3452;
 
 export const corsOptions: CorsOptions = {
-    origin: isDevmode ? "*" : "https://react-portfolio-lac-xi.vercel.app",
+    origin: ["https://react-portfolio-lac-xi.vercel.app", "http://localhost:5173"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }
