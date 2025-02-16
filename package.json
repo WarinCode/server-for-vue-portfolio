@@ -1,5 +1,5 @@
 {
-  "name": "server-for-react-portfolio",
+  "name": "server-for-vue-portfolio",
   "version": "1.0.0",
   "main": "src/server.ts",
   "type": "module",

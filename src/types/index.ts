@@ -10,7 +10,7 @@ export interface EnvironmentVariables extends NodeJS.ProcessEnv {
 }
 
 export interface Params {
-    id: number;
+    id: string;
 }
 
 export interface GPAParams {
