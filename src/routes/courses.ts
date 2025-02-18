@@ -44,7 +44,7 @@ courseRoutes.post(
     res: Response
   ): Promise<void> => {
     try {
-      const sql = `INSERT INTO courses VALUES(''${id}, '${courseName}', '${courseCode}', '${grade}', ${credit})`;
+      const sql = `INSERT INTO courses VALUES('${id}', '${courseName}', '${courseCode}', '${grade}', ${credit})`;
       await connection.query<Courses>(sql);
 
       res.status(201).json({ success: "เพิ่มรายวิชาสำเร็จ" });
