@@ -10,7 +10,7 @@ courseRoutes.get(
   "/courses",
   async (req: Request, res: Response): Promise<void> => {
     try {
-      const sql: string = "SELECT * FROM courses";
+      const sql: string = "SELECT * FROM courses ORDER BY courseCode";
       const [courses] = await connection.query<Courses>(sql);
       res.status(200).json(courses);
     } catch (e: any) {
@@ -67,7 +67,7 @@ courseRoutes.put(
       const sql: string = `UPDATE courses SET courseName = '${courseName}', courseCode = '${courseCode}', grade = '${grade}', credit = ${credit} WHERE id = '${id}'`;
       await connection.query<Courses>(sql);
 
-      res.status(200).json({ success: "อัปเดตรายวิชาสำเร็จ" });
+      res.status(200).json({ success: "แก้ไขรายวิชาสำเร็จ" });
     } catch (e: any) {
       res.status(500).json({ message: e?.message });
     }
@@ -79,7 +79,7 @@ courseRoutes.delete(
   async ({ params: { id } }: Request<Params>, res: Response): Promise<void> => {
     try {
       const sql: string = `DELETE FROM courses WHERE id = '${id}'`;
-      await connection.query<Courses>(sql);
+      const a = await connection.query<Courses>(sql);
 
       res.status(200).json({ success: "ลบรายวิชาสำเร็จ" });
     } catch (e: any) {

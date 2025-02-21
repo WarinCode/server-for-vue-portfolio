@@ -7,7 +7,7 @@ import schoolRoutes from "./routes/schools";
 import universityRoutes from "./routes/university";
 import loginRoute from "./routes/login";
 import gpaRoutes from "./routes/gpa";
-import { checkConnection, getNotFoundPage } from "./middlewares";
+import { checkConnection, getNotFoundPage, auth } from "./middlewares";
 import { corsOptions, port } from "./configs";
 
 const app: Express = express();
@@ -23,6 +23,7 @@ app
   })
   .post("/login", loginRoute)
   .use("/api/*", checkConnection)
+  .use("/api/*", auth)
   .use("/api", userRoutes)
   .use("/api", courseRoutes)
   .use("/api", schoolRoutes)
