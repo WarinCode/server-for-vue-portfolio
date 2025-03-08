@@ -1,4 +1,6 @@
-export default interface UserModel {
+import { RowDataPacket } from "mysql2";
+
+export default interface UserModel extends RowDataPacket{
     fullname: string;
     age: number;
     studentId: number;

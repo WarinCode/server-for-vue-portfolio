@@ -1,4 +1,5 @@
 import { RowDataPacket } from "mysql2";
+import UserModel from "./models/user";
 
 export interface EnvironmentVariables extends NodeJS.ProcessEnv {
     readonly DB: string;
@@ -26,3 +27,5 @@ export interface UserLogin extends RowDataPacket {
 }
 
 export type Body = UserLogin;
+
+export interface UserBody extends UserModel { };

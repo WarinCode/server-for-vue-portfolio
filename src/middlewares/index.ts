@@ -27,7 +27,8 @@ export const checkConnection = async (req: Request, res: Response, next: NextFun
 }
 
 export const auth = ({ headers: { authorization } }: Request, res: Response, next: NextFunction): void => {
-    let token: string | undefined = authorization?.startsWith("Bearer") ? authorization.split(" ")[1] : authorization;
+    const temp: string[] = authorization?.split(" ") as string[];
+    let token: string = temp[temp.length - 1];
 
     if (!token) {
         res.status(401).json({ message: "ไม่มีการยืนยันตัวตนจากผู้ใช้งาน!" });

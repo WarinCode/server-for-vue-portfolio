@@ -1,11 +1,20 @@
 import { Router, Request, Response } from "express";
-import { user } from "../db/data";
 import { getNotFoundPage } from "../middlewares";
+import { UserBody } from "../types";
+import { user } from "../db/data";
 
 const userRoutes: Router = Router();
 
-userRoutes.get("/user", (req: Request, res: Response): void => {
+userRoutes.get("/user", async (req: Request, res: Response): Promise<void> => {
     res.status(200).json(user);
+})
+
+userRoutes.put("/user", async ({ body: { fullname, university, faculty, major } }: Request<any, any, UserBody>, res: Response): Promise<void> => {
+    user.fullname = fullname;
+    user.university = university;
+    user.faculty = faculty;
+    user.major = major;
+    res.status(200).json({ message: "แก้ไขข้อมูลสำเร็จ" });
 })
 
 userRoutes.all("/user/*", getNotFoundPage);
