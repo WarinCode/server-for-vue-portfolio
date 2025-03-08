@@ -9,9 +9,9 @@ userRoutes.get("/user", async (req: Request, res: Response): Promise<void> => {
     res.status(200).json(user);
 })
 
-userRoutes.put("/user", async ({ body: { fullname, university, faculty, major } }: Request<any, any, UserBody>, res: Response): Promise<void> => {
+userRoutes.put("/user", async ({ body: { fullname, studentId, faculty, major } }: Request<any, any, UserBody>, res: Response): Promise<void> => {
     user.fullname = fullname;
-    user.university = university;
+    user.studentId = studentId;
     user.faculty = faculty;
     user.major = major;
     res.status(200).json({ message: "แก้ไขข้อมูลสำเร็จ" });
