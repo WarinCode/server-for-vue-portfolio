@@ -5,9 +5,8 @@ import morgan from "morgan";
 import courseRoutes from "./routes/courses";
 import schoolRoutes from "./routes/schools";
 import universityRoutes from "./routes/university";
-import loginRoute from "./routes/login";
 import gpaRoutes from "./routes/gpa";
-import { checkConnection, getNotFoundPage, auth } from "./middlewares";
+import { getNotFoundPage } from "./middlewares";
 import { corsOptions, port } from "./configs";
 
 const app: Express = express();
@@ -21,9 +20,6 @@ app
   .get("/", (req: Request, res: Response): void => {
     res.status(200).send("Hello World");
   })
-  .post("/login", loginRoute)
-  .use("/api/*", checkConnection)
-  .use("/api/*", auth)
   .use("/api", userRoutes)
   .use("/api", courseRoutes)
   .use("/api", schoolRoutes)

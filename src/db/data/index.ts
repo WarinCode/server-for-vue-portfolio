@@ -83,5 +83,13 @@ export const gpas: GPAs = [
     gpa: 3.88,
     gpax: 3.70,
     credit: 17
+  },
+  {
+    year: 2567,
+    studentYear: 2,
+    semester: "second",
+    gpa: 3.88,
+    gpax: 3.75,
+    credit: 20
   }
 ]
